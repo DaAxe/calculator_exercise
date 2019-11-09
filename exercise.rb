@@ -5,8 +5,25 @@
 # The calculator should also take a list of values and add, subtract, divide and multiply them together.
 # The calculator's square function should now work with all Exponents
 # Log each calculation and its result into a text file
-quit = false
-until quit do
+def get_user_input
+    puts "Whats your first number?"
+    num1 = gets.chomp.to_i
+    puts "What's your second number?"
+    num2 = gets.chomp.to_i
+    return num1, num2
+  end
+  def sum
+    num1, num2 = get_user_input()
+    result = num1 + num2
+    puts result
+  end
+  def subtract
+    num1, num2 = get_user_input()
+    result = num1 - num2
+    puts result
+  end
+  quit = false
+  until quit do
     puts "Options"
     puts "1. Sum"
     puts "2. Subtract"
@@ -17,25 +34,34 @@ until quit do
     user_input = gets.chomp
     case user_input
     when "1"
-        puts "Whats your first number?"
-        num1 = gets.chomp.to_i
-        puts "What's your second number?"
-        num2 = gets.chomp.to_i
-        result = num1 + num2
-        puts result
-    when "q" 
-quit = true
+      sum()
+      result = num1 + num2
+      puts result
+    when "2"
+      get_user_input()
+      result = num1 - num2
+      puts result
+    when "3"
+      puts "Whats your first number?"
+      num1 = gets.chomp.to_i
+      puts "What's your second number?"
+      num2 = gets.chomp.to_i
+      result = num1 / num2
+      puts result
+    when "4"
+      puts "Whats your first number?"
+      num1 = gets.chomp.to_i
+      puts "What's your second number?"
+      num2 = gets.chomp.to_i
+      result = num1 * num2
+      puts result
+    when "q"
+      quit = true
     end
   end
-
-
-#   Requirements 
-#     loop
-#     print options
-#     be able to quit
-#     takes to values:
-#       sum
-#       subtract
-#       divide
-#       multiply
-#       square
+  # Requirements 
+  #   takes to values:
+  #     divide
+  #     multiply
+  #     square
+  
