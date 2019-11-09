@@ -5,7 +5,8 @@
 # The calculator should also take a list of values and add, subtract, divide and multiply them together.
 # The calculator's square function should now work with all Exponents
 # Log each calculation and its result into a text file
-loop do
+quit = false
+until quit do
     puts "Options"
     puts "1. Sum"
     puts "2. Subtract"
@@ -13,14 +14,21 @@ loop do
     puts "4. Multiply"
     puts "5. Square"
     puts "q. Quit"
+    user_input = gets.chomp
+    case user_input
+    when "q" 
+quit = true
+    end
   end
-  Requirements 
-    loop
-    print options
-    be able to quit
-    takes to values:
-      sum
-      subtract
-      divide
-      multiply
-      square
+
+
+#   Requirements 
+#     loop
+#     print options
+#     be able to quit
+#     takes to values:
+#       sum
+#       subtract
+#       divide
+#       multiply
+#       square
